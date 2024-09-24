@@ -11,7 +11,7 @@ class frotaController extends Controller
     //Inicio CRUD
 
     //Create
-    function SalvarFrota(Request $request){
+    function salvarFrota(Request $request){
         $registros = $request->validate([
             'veiculo'=>'string|required',
             'motorista'=>'string|required',
@@ -24,7 +24,7 @@ class frotaController extends Controller
 
     //READ
     public function showFormulario(){
-        return view('gerenciarFrota');
+        return view('cadastroFrota');
     }
 
     //Delete
@@ -61,8 +61,8 @@ class frotaController extends Controller
         return view('gerenciarFrota',['registrosFrota'=>$todosRegistros]);
     }
 
-    public function mostarFrotaId(Agenda $id){
-        return view('alterarFrota',['registrosFrota'->$id]);
+    public function mostrarFrotaId(Frota $id){
+        return view('alterarFrota',['registrosFrota'=>$id]);
     }
 
 }
